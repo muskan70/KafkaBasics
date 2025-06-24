@@ -10,13 +10,13 @@ import (
 
 const (
 	KafkaServer = "localhost:9092,localhost:9093,localhost:9094"
-	KafkaTopic  = "stock-topic"
+	KafkaTopic  = "inventory-ticks"
 )
 
-type Stock struct {
-	Id        int
-	Name      string
-	LastPrice float64
+type ProductInventory struct {
+	Id       int
+	Name     string
+	Quantity int
 }
 
 func main() {
@@ -34,13 +34,13 @@ func main() {
 	delivery_chan := make(chan kafka.Event, 10000)
 
 	for i := range 10000 {
-		stockName := "stockName_" + strconv.Itoa(i)
-		stock := Stock{
-			Id:        i,
-			Name:      stockName,
-			LastPrice: 1000.00 + float64(i),
+		productName := "productName_" + strconv.Itoa(i)
+		productInv := ProductInventory{
+			Id:       i,
+			Name:     productName,
+			Quantity: i,
 		}
-		value, err := json.Marshal(stock)
+		value, err := json.Marshal(productInv)
 		if err != nil {
 			panic(err)
 		}

@@ -3,4 +3,6 @@
 1. [Single Node Kafka Cluster](./SingleNodeKafkaCluster/Instructions.md)
 2. [Multi Node Kafka Cluster](./MultiNodeKafkaCluster/Instructions.md)
 3. [Kafka Producer Implementation in Go](./KafkaProducer/Producer.go)
-4. [Kafka Consumer Implementation in Go](./KafkaConsumer/Consumer.go)
+4. [Multithread Kafka Producer Implementation in Go](./MultiThreadKafkaProducer)
+5. [Transactions With Kafka Producer Implementation in Go](./TransactionsWithKafkaProducer)
+6. [Kafka Consumer Implementation in Go](./KafkaConsumer/Consumer.go)
