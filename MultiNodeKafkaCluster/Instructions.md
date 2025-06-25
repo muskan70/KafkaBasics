@@ -32,3 +32,5 @@ Note:
 > ./kafka-topics.sh --describe --topic mytopic --bootstrap-server kafka1:29092
 3. To check consumer group status
 > ./kafka-consumer-groups.sh --bootstrap-server kafka1:29092 --group group1 --describe
+4. To alter topic config
+> ./kafka-configs.sh --bootstrap-server kafka1:29092 --alter --entity-type topics --entity-name {topic-name} --add-config min.insync.replicas=2
